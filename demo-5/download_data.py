@@ -16,7 +16,7 @@ def go(args):
     logger.info(f"Downloading {args.file_url} ...")
     with tempfile.NamedTemporaryFile(mode="wb+") as fp:
         logger.info("Creating run demo1")
-        with mlflow.start_run() as run:
+        with mlflow.start_run(description=args.artifact_description) as run:
             with requests.get(args.file_url, stream=True) as r:
                 for chunk in r.iter_content(chunk_size=8192):
                     fp.write(chunk)

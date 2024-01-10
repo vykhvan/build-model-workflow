@@ -1,0 +1,7 @@
+name: download_data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - requests=2.31.0
+  - mlflow=2.9.2
